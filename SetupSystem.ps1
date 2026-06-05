@@ -21,12 +21,14 @@
 . "$PSScriptRoot\functions\Set\Set-SystemClock.ps1"
 . "$PSScriptRoot\functions\Set\Set-PowerPlanHighPerformance.ps1"
 . "$PSScriptRoot\functions\Set\Set-Network.ps1"
+. "$PSScriptRoot\functions\Set\Set-KeyboardLayout.ps1"
 
 Write-Host "==> Starting Initial Setup..." -ForegroundColor Cyan
 
 Set-SystemClock
 Set-PowerPlanHighPerformance
 Set-Network
+Set-KeyboardLayout
 Set-DODownloadMode -DownloadMode 0 # Disable Delivery Optimisation
 
 winget source update
