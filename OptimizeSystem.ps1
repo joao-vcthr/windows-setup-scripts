@@ -33,6 +33,12 @@ Write-Host "==> Disabling System Restore..." -ForegroundColor Cyan
 Disable-ComputerRestore -Drive "C:\"
 vssadmin delete shadows /all /quiet
 
+Write-Step "==> Removing unused keyboard layouts..."
+$LanguageList = New-WinUserLanguageList "pt-BR"
+$LanguageList[0].InputMethodTips.Clear()
+$LanguageList[0].InputMethodTips.Add("0416:00010416")
+Set-WinUserLanguageList -LanguageList $LanguageList -Force
+
 Write-Host "==> Optimizing Disks" -ForegroundColor Cyan
 Optimize-Volume -DriveLetter 'C' -Verbose -ReTrim
 Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim

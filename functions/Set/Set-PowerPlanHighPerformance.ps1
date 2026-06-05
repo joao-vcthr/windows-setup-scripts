@@ -1,6 +1,7 @@
 function Set-PowerPlanHighPerformance {
     Write-Host "==> Configuring power plan..." -ForegroundColor Cyan
 
+    Write-Host "==> Changing power plan to High Performance..." -ForegroundColor Cyan
     powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c # Change powerplan to High Performance
 
     powercfg /change monitor-timeout-ac 5 # Monitor timeout
