@@ -12,7 +12,7 @@ function Disable-Services {
         "SCardSvr",         # Smart Card
         "SCPolicySvc",      # Smart Card Policy
         "SysMain",          # SysMain
-        "WbioSrvc",         # Windows Biometric Service
+        # "WbioSrvc",         # Windows Biometric Service
         "MapsBroker",       # Downloaded Maps Manager
         "CscService",       # Offline Files
         "RasMan",           # Remote Access Connection Manager
@@ -26,8 +26,10 @@ function Disable-Services {
     )
 
 foreach ($s in $services) {
-    Write-Host "==> Disabling service: $s"
+    Write-Host "==> Disabling service: $s" -ForegroundColor Cyan
     Stop-Service -Name $s -Force -ErrorAction SilentlyContinue
     Set-Service -Name $s -StartupType Disabled -ErrorAction SilentlyContinue
     }
+
+    Write-Host "==> Services disabled!" -ForegroundColor Green
 }
