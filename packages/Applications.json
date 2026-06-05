@@ -1,9 +1,10 @@
 {
     "Order": [
         "Browsers",
-        "ScreenCapture",
         "Productivity",
         "Office",
+        "Communication",
+        "ScreenCapture",
         "Hardware",
         "Media",
         "Maintenance",
@@ -18,19 +19,25 @@
         { "Id": "Brave.Brave", "Source": "winget" }
     ],
 
-    "ScreenCapture": [
-        { "Id": "ShareX.ShareX", "Source": "winget" },
-        { "Id": "OBSProject.OBSStudio", "Source": "winget" }
-    ],
-
     "Productivity": [
         { "Id": "Obsidian.Obsidian", "Source": "winget" },
+        { "Id": "Doist.Todoist", "Source": "winget" },
         { "Id": "flxzt.rnote", "Source": "winget" }
+    ],
+
+    "Communication": [
+        { "Id": "Telegram.TelegramDesktop", "Source": "winget" },
+        { "Id": "Discord.Discord", "Source": "winget" }
     ],
 
     "Office": [
         { "Id": "TheDocumentFoundation.LibreOffice", "Source": "winget" },
         { "Id": "9N41MSQ1WNM8", "Source": "msstore" }
+    ],
+
+    "ScreenCapture": [
+        { "Id": "ShareX.ShareX", "Source": "winget" },
+        { "Id": "OBSProject.OBSStudio", "Source": "winget" }
     ],
 
     "Hardware": [
@@ -63,7 +70,7 @@
         { "Id": "GOG.Galaxy", "Source": "winget" },
         { "Id": "Blizzard.BattleNet", "Source": "winget", "Args": ["--location", "C:\\Program Files (x86)\\Battle.net"] }
     ],
-
+    
     "ProgrammingLanguages": [
         { "Id": "Rustlang.Rustup", "Source": "winget" },
         { "Id": "LLVM.LLVM", "Source": "winget" },
