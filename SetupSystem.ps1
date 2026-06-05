@@ -1,0 +1,36 @@
+<#
+.SYNOPSIS
+    Facilitates the initial commissioning and hardening of a freshly installed Windows environment.
+
+.DESCRIPTION
+    This script automates the essential configuration steps required to transform a default installation into an optimised workstation. It consolidates multiple administrative tasks into a single workflow to ensure consistency across deployments.
+
+    Key actions include:
+    - Authorising a high-performance power scheme and deactivating hibernation to reclaim storage.
+    - Synchronising the system clock and localising the time zone settings.
+    - Establishing a secure network configuration with custom DNS and cleared caches.
+    - Initialising system integrity checks (DISM/SFC) and physical disk verification.
+    - Customising Winget settings to enable installer hash overrides for smoother package management.
+
+.NOTES
+    Author:      joao-vcthr
+    Date:        05/08/2026
+    Requirements: Must be run as Administrator. An internet connection is required for synchronisation and Winget configuration.
+#>
+
+. "$PSScriptRoot\functions\Set\Set-SystemClock.ps1"
+. "$PSScriptRoot\functions\Set\Set-PowerPlanHighPerformance.ps1"
+. "$PSScriptRoot\functions\Set\Set-Network.ps1"
+
+Write-Host "==> Starting Initial Setup..." -ForegroundColor Cyan
+
+Set-SystemClock
+Set-PowerPlanHighPerformance
+Set-Network
+Set-DODownloadMode -DownloadMode 0 # Disable Delivery Optimisation
+
+winget source update
+winget install --id Microsoft.PowerShell --source winget --exact --accept-package-agreements --accept-source-agreements
+winget settings --enable InstallerHashOverride
+
+Write-Host "==> Initial Setup Done!" -ForegroundColor Green
