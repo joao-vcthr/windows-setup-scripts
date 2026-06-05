@@ -3,7 +3,7 @@ function Disable-GameDVR {
     # 1. Verifica se está rodando como Administrador (necessário para HKLM)
     $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
     if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-        Write-Error "Este script precisa ser executado como Administrador."
+        Write-Error "This script must be run as administrator."
         return
     }
 
@@ -30,7 +30,7 @@ function Disable-GameDVR {
         if (-not (Test-Path $entry.Path)) { New-Item -Path $entry.Path -Force | Out-Null }
         
         foreach ($item in $entry.Values) {
-            Write-Host "Configurando $($item.Name) para $($item.Value) em $($entry.Path)" -ForegroundColor Cyan
+            Write-Host "Configuring $($item.Name) to $($item.Value) at $($entry.Path)" -ForegroundColor Cyan
             Set-ItemProperty -Path $entry.Path -Name $item.Name -Value $item.Value -Force
         }
     }
@@ -41,9 +41,8 @@ function Disable-GameDVR {
         New-Item -Path $policyPath -Force | Out-Null
     }
     
-    Write-Host "Desativando política global AllowGameDVR" -ForegroundColor Cyan
+    Write-Host "Disabling AllowGameDVR global policy" -ForegroundColor Cyan
     Set-ItemProperty -Path $policyPath -Name "AllowGameDVR" -Value 0 -Force
 
-    Write-Host "`n[SUCESSO] GameDVR e recursos de captura foram desativados." -ForegroundColor Green
-    Write-Host "Dica: Reinicie o Windows Explorer ou o computador para aplicar todas as mudanças." -ForegroundColor Cyan
+    Write-Host "==> GameDVR and capture resources disabled! Restart the computer" -ForegroundColor Green
 }
