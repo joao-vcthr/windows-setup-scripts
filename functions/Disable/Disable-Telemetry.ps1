@@ -1,4 +1,5 @@
 function Disable-Telemetry {
+    Write-Host "==> Disabling Telemetry" -ForegroundColor Cyan
     # --- Recommendations & Offers ---
     Write-Host "Disabling Personalized offers..."
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" -Name "TailoredExperiencesWithDiagnosticDataEnabled" -Value 0
@@ -50,4 +51,6 @@ function Disable-Telemetry {
     # Impedir que sites acessem lista de idiomas
     Write-Step "Bloqueando acesso de sites à lista de idiomas..."
     Set-RegistryValue -Path "HKCU:\Control Panel\International\User Profile" -Name "HttpAcceptLanguageOptOut" -Value 1
+
+    Write-Host "==> Telemetry Disabled!" -ForegroundColor Green
 }
