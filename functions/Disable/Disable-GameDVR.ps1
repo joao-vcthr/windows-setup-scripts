@@ -45,5 +45,5 @@ function Disable-GameDVR {
     Set-ItemProperty -Path $policyPath -Name "AllowGameDVR" -Value 0 -Force
 
     Write-Host "`n[SUCESSO] GameDVR e recursos de captura foram desativados." -ForegroundColor Green
-    Write-Host "Dica: Reinicie o Windows Explorer ou o PC para aplicar todas as mudanças." -ForegroundColor Cyan
+    Write-Host "Dica: Reinicie o Windows Explorer ou o computador para aplicar todas as mudanças." -ForegroundColor Cyan
 }
