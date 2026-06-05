@@ -43,8 +43,8 @@ $installOrder = $packages["Order"]
 # Update winget
 winget source update
 
-Write-Host "==> Installing process started..." -ForegroundColor Cyan
+Write-Host "==> Installing Apps..." -ForegroundColor Cyan
 
 Start-AppInstallation @PSBoundParameters
 
-Write-Host "`n==> Installation process finished!" -ForegroundColor Green
+Write-Host "`n==> Apps installed!" -ForegroundColor Green
