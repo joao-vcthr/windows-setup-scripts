@@ -1,5 +1,6 @@
 function Disable-Telemetry {
     Write-Host "==> Disabling Telemetry" -ForegroundColor Cyan
+
     # --- Recommendations & Offers ---
     Write-Host "Disabling Personalized offers..."
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" -Name "TailoredExperiencesWithDiagnosticDataEnabled" -Value 0
@@ -30,26 +31,25 @@ function Disable-Telemetry {
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings" -Name "AcceptedPrivacyPolicy" -Value 0
 
     # --- Diagnostics & Feedback ---
-    Write-Host "Configurando Diagnostics & Feedback..."
+    Write-Host "Configuring Diagnostics & Feedback..."
     Set-RegistryValue -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 1
     Set-RegistryValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Value 1
 
-    Write-Host "Disabling coleta de dados de digitação..."
+    Write-Host "Disabling typing data collection..."
     Set-RegistryValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\TextInput" -Name "AllowLinguisticDataCollection" -Value 0
 
-    Write-Host "Disabling relatórios de erro..."
+    Write-Host "Disabling Error Reporting..."
     Set-RegistryValue -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "Disabled" -Value 1
 
-
     # --- Search ---
-    Write-Host "Configurando Search..."
+    Write-Host "Configuring Search..."
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" -Name "SafeSearchMode" -Value 0
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" -Name "IsMSACloudSearchEnabled" -Value 0
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" -Name "IsAADCloudSearchEnabled" -Value 0
     Set-RegistryValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings" -Name "IsDeviceSearchHistoryEnabled" -Value 0
 
     # Impedir que sites acessem lista de idiomas
-    Write-Step "Bloqueando acesso de sites à lista de idiomas..."
+    Write-Step "Blocking acess to language list..."
     Set-RegistryValue -Path "HKCU:\Control Panel\International\User Profile" -Name "HttpAcceptLanguageOptOut" -Value 1
 
     Write-Host "==> Telemetry Disabled!" -ForegroundColor Green
