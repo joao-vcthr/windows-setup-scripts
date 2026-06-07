@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 .SYNOPSIS
     Applies performance optimizations and fine-tuning to the system.
@@ -19,15 +21,16 @@
 
 $ErrorActionPreference = "Stop"
 
-. "$PSScriptRoot\functions\Set\Disable-GameDVR"
-. "$PSScriptRoot\functions\Set\Disable-Services"
-. "$PSScriptRoot\functions\Set\Disable-Telemetry"
+. "$PSScriptRoot\functions\Disable\Disable-GameDVR"
+. "$PSScriptRoot\functions\Disable\Disable-Services"
+. "$PSScriptRoot\functions\Disable\Disable-Telemetry"
 
 Write-Host "==> Optmizing System..." -ForegroundColor Cyan
 
 Disable-GameDVR
 Disable-Services
 Disable-Telemetry
+Disable-AppPermissions
 
 Write-Host "==> Disabling System Restore..." -ForegroundColor Cyan
 Disable-ComputerRestore -Drive "C:\"
