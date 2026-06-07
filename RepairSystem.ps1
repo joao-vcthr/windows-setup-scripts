@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 .SYNOPSIS
     Executes a comprehensive suite of maintenance tasks to rectify system corruption and optimise disk health.
