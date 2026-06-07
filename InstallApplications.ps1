@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 .SYNOPSIS
     Installs desktop applications via Winget and MS Store using switch parameters.
@@ -12,6 +14,7 @@
 
 param (
     [switch]$Browsers,
+    [switch]$Communication,
     [switch]$ScreenCapture,
     [switch]$Productivity,
     [switch]$Office,
