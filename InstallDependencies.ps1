@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 .SYNOPSIS
     Installs a set of essential dependencies and runtimes for games and applications.
