@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 .SYNOPSIS
     Facilitates the initial commissioning and hardening of a freshly installed Windows environment.
