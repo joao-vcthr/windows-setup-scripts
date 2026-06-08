@@ -15,13 +15,13 @@ function Set-RegistryValue {
     )
 
     try {
-        # Verifica se o caminho (chave) existe; se não, cria
+        # Verify if path exists
         if (-not (Test-Path -Path $Path)) {
             Write-Verbose " '$Path' does not exist. Creating..."
             New-Item -Path $Path -Force | Out-Null
         }
 
-        # Verifica se o valor (propriedade) já existe dentro da chave
+        # Verify if the value/property already exists
         $existingProperty = Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue
 
         if ($null -eq $existingProperty) {
