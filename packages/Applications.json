@@ -16,7 +16,7 @@
 
     "Browsers": [
         { "Id": "Mozilla.Firefox", "Source": "winget" },
-        { "Id": "Brave.Brave", "Source": "winget" }
+        { "Id": "Google.Chrome", "Source": "winget" }
     ],
 
     "Productivity": [
