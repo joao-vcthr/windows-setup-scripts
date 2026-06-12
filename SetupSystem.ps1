@@ -24,8 +24,9 @@
 . "$PSScriptRoot\functions\Set\Set-PowerPlan.ps1"
 . "$PSScriptRoot\functions\Set\Set-Network.ps1"
 . "$PSScriptRoot\functions\Set\Set-KeyboardLayout.ps1"
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
-Write-Host "==> Starting Initial Setup..." -ForegroundColor Cyan
+Write-Header "Starting Initial Setup..."
 
 Set-SystemClock
 Set-Network
@@ -37,4 +38,4 @@ winget source update
 winget install --id Microsoft.PowerShell --source winget --exact --accept-package-agreements --accept-source-agreements
 winget settings --enable InstallerHashOverride
 
-Write-Host "==> Initial Setup Done!" -ForegroundColor Green
+Write-Ok "Initial Setup Done!"
