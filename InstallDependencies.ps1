@@ -27,9 +27,10 @@ param (
 . "$PSScriptRoot\functions\Install\Install-App.ps1"
 . "$PSScriptRoot\functions\Install\Install-PackageGroup.ps1"
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\packages\Dependencies.json"
+$packagesFile = "$PSScriptRoot\config\Dependencies.json"
 
 if (-not (Test-Path $packagesFile)) {
     Write-Host "==> Error: packages.json not found at $packagesFile" -ForegroundColor Red
@@ -42,9 +43,9 @@ $installOrder = $packages["Order"]
 # Update winget
 winget source update
 
-Write-Host "==> Installing dependencies..." -ForegroundColor Cyan
+Write-Header "Installing dependencies..."
 
 DISM /Online /Enable-Feature /FeatureName:NetFx3 /All # Enable .NET 3.5
 Start-AppInstallation @PSBoundParameters
 
-Write-Host "==> Dependencies installed! Restart the computer." -ForegroundColor Green
+Write-Ok "Dependencies installed! Restart the computer."
