@@ -1,13 +1,15 @@
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
+
 function Install-PackageGroup {
     param(
         [string]$GroupName
     )
 
-    Write-Host "==> Installing $GroupName..." -ForegroundColor Cyan
+    Write-Header "Installing $GroupName..."
 
     foreach ($app in $packages[$GroupName]) {
         Install-App -App $app
     }
 
-    Write-Host "==> $GroupName installed!" -ForegroundColor Green
+    Write-Ok "$GroupName installed!"
 }
