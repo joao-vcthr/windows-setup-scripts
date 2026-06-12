@@ -1,4 +1,5 @@
 . "$PSScriptRoot\..\Set\Set-RegistryValue.ps1"
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
 
 function Disable-GameDVR {
 
@@ -23,7 +24,7 @@ function Disable-GameDVR {
 
     foreach ($entry in $paths) {
         foreach ($item in $entry.Values) {
-            Write-Host "Configuring $($item.Name) to $($item.Value) at $($entry.Path)" -ForegroundColor Cyan
+            Write-Running "Configuring $($item.Name) to $($item.Value) at $($entry.Path)"
             Set-RegistryValue -Path $entry.Path -Name $item.Name -Value $item.Value
         }
     }
@@ -31,8 +32,8 @@ function Disable-GameDVR {
     # Configurações de Máquina/Política (HKLM)
     $policyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR"
 
-    Write-Host "Disabling AllowGameDVR global policy" -ForegroundColor Cyan
+    Write-Running "Disabling AllowGameDVR global policy"
     Set-RegistryValue -Path $policyPath -Name "AllowGameDVR" -Value 0
 
-    Write-Host "==> GameDVR and capture resources disabled! Restart the computer" -ForegroundColor Green
+    Write-Ok "GameDVR and capture resources disabled! Restart the computer"
 }
