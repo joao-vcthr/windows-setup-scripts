@@ -31,9 +31,10 @@ param (
 . "$PSScriptRoot\functions\Install\Install-App.ps1"
 . "$PSScriptRoot\functions\Install\Install-PackageGroup.ps1"
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\packages\Applications.json"
+$packagesFile = "$PSScriptRoot\config\Applications.json"
 
 if (-not (Test-Path $packagesFile)) {
     Write-Host "==> Error: packages.json not found at $packagesFile" -ForegroundColor Red
@@ -46,8 +47,8 @@ $installOrder = $packages["Order"]
 # Update winget
 winget source update
 
-Write-Host "==> Installing Apps..." -ForegroundColor Cyan
+Write-Header "Installing Apps..."
 
 Start-AppInstallation @PSBoundParameters
 
-Write-Host "`n==> Apps installed!" -ForegroundColor Green
+Write-Ok "Apps installed!" -ForegroundColor Green
