@@ -1,3 +1,5 @@
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
+
 function Set-RegistryValue {
     [CmdletBinding()]
     param (
@@ -33,9 +35,9 @@ function Set-RegistryValue {
             Set-ItemProperty -Path $Path -Name $Name -Value $Value
         }
 
-        Write-Host "OK: '$Name' defined as '$Value' at '$Path'" -ForegroundColor Green
+        Write-Ok "'$Name' defined as '$Value' at '$Path'" -ForegroundColor Green
     }
     catch {
-        Write-Error "Error defining registry value: $_"
+        Write-Fail "Error defining registry value: $_"
     }
 }

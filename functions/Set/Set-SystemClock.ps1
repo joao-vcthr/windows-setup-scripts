@@ -1,9 +1,12 @@
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
+
 function Set-SystemClock {
-    Write-Host "==> Setting time zone to Brasília..." -ForegroundColor Cyan
+    Write-Header "Setting time zone to Brasília..." -ForegroundColor Cyan
     Set-TimeZone -Id "E. South America Standard Time"
     
-    Write-Host "==> Synchronising clock..." -ForegroundColor Cyan
+    Write-Header "Synchronising clock..." -ForegroundColor Cyan
     net start w32time
     W32tm /resync /force
-    Write-Host "==> Time zone set and Clock synchronised successfully!" -ForegroundColor Green
+    
+    Write-Ok "Time zone set and Clock synchronised successfully!" -ForegroundColor Green
 }

@@ -1,7 +1,9 @@
-function Set-PowerPlanHighPerformance {
-    Write-Host "==> Configuring power plan..." -ForegroundColor Cyan
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
 
-    Write-Host "==> Changing power plan to High Performance..." -ForegroundColor Cyan
+function Set-PowerPlanHighPerformance {
+    Write-Header "Configuring power plan..."
+
+    Write-Running "Changing power plan to High Performance..."
     powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c # Change powerplan to High Performance
 
     powercfg /change monitor-timeout-ac 5 # Monitor timeout
@@ -14,13 +16,13 @@ function Set-PowerPlanHighPerformance {
 
     powercfg.exe /hibernate off # Disable Hibernation
 
-    Write-Host "==> Power plan configured!" -ForegroundColor Green
+    Write-Ok "Power plan configured!"
 }
 
 function Set-PowerPlanBalanced {
-    Write-Host "==> Configuring power plan..." -ForegroundColor Cyan
+    Write-Header "Configuring power plan..."
 
-    Write-Host "==> Changing power plan to Balanced..." -ForegroundColor Cyan
+    Write-Running "Changing power plan to Balanced..."
     powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e # Change powerplan to Balanced
 
     powercfg /change monitor-timeout-ac 5 # Monitor timeout
@@ -33,7 +35,7 @@ function Set-PowerPlanBalanced {
 
     powercfg.exe /hibernate off # Disable Hibernation
 
-    Write-Host "==> Power plan configured!" -ForegroundColor Green
+    Write-Ok "Power plan configured!" -ForegroundColor Green
 }
 
 function Select-PowerPlan {
@@ -44,6 +46,6 @@ function Select-PowerPlan {
     switch ($power) {
         1 { Set-PowerPlanBalanced }
         2 { Set-PowerPlanHighPerformance }
-        Default { Write-Host "Invalid Option" -ForegroundColor Red ; Select-PowerPlan }
+        Default { Write-Fail "Invalid Option"; Select-PowerPlan }
     }
 }
