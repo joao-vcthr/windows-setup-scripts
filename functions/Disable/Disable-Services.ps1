@@ -1,3 +1,5 @@
+. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
+
 function Disable-Services {
     # List of services to be disabled
     $services = @(
@@ -26,10 +28,10 @@ function Disable-Services {
     )
 
 foreach ($s in $services) {
-    Write-Host "==> Disabling service: $s" -ForegroundColor Cyan
+    Write-Running "Disabling service: $s"
     Stop-Service -Name $s -Force -ErrorAction SilentlyContinue
     Set-Service -Name $s -StartupType Disabled -ErrorAction SilentlyContinue
     }
 
-    Write-Host "==> Services disabled!" -ForegroundColor Green
+    Write-Ok "Services disabled!"
 }
