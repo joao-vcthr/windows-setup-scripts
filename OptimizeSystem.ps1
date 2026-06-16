@@ -21,10 +21,12 @@
 
 $ErrorActionPreference = "Stop"
 
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 . "$PSScriptRoot\functions\Disable\Disable-GameDVR"
 . "$PSScriptRoot\functions\Disable\Disable-Services"
 . "$PSScriptRoot\functions\Disable\Disable-Telemetry"
-. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
+. "$PSScriptRoot\functions\Disable\Disable-MPO"
+
 
 Write-Header "Optmizing System..."
 
@@ -32,6 +34,7 @@ Disable-GameDVR
 Disable-Services
 Disable-Telemetry
 Disable-AppPermissions
+Disable-MPO
 
 Write-Header "Disabling System Restore..."
 Disable-ComputerRestore -Drive "C:\"
@@ -39,9 +42,9 @@ vssadmin delete shadows /all /quiet
 
 Write-Header "Optimizing Disks"
 Optimize-Volume -DriveLetter 'C' -Verbose -ReTrim
-Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim
+# Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim
 
-Write-Ok "Optimization completed! The computer will restart em 5 seconds"
+Write-Ok "Optimization completed! The computer will restart in 5 seconds"
 
 Start-Sleep 5
 Restart-Computer
