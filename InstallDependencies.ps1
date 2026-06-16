@@ -24,10 +24,10 @@ param (
     [switch]$All
 )
 
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 . "$PSScriptRoot\functions\Install\Install-App.ps1"
 . "$PSScriptRoot\functions\Install\Install-PackageGroup.ps1"
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
-. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
 # --- Load Packages ---
 $packagesFile = "$PSScriptRoot\config\Dependencies.json"
