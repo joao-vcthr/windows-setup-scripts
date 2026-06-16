@@ -1,9 +1,7 @@
-. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
-
 function Set-Network {
     Write-Header "Configuring network" -ForegroundColor Cyan
     
-    Write-Running "==> Clearing old DNS cache..." -ForegroundColor Cyan
+    Write-Running "Clearing old DNS cache..." -ForegroundColor Cyan
     Clear-DnsClientCache
 
     Write-Host "[1] Google DNS"

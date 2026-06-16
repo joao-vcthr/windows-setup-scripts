@@ -1,5 +1,3 @@
-. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
-
 function Set-PowerPlanHighPerformance {
     Write-Header "Configuring power plan..."
 

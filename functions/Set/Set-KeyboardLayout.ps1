@@ -1,5 +1,3 @@
-. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
-
 function Set-KeyboardLayout {
     Write-Header "Removing unused keyboard layouts..." -ForegroundColor Cyan
     $LanguageList = New-WinUserLanguageList "en-US"
