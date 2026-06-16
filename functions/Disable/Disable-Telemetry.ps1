@@ -1,5 +1,4 @@
 . "$PSScriptRoot\..\Set\Set-RegistryValue.ps1"
-. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
 
 function Disable-Telemetry {
     Write-Header "==> Disabling Telemetry" -ForegroundColor Cyan

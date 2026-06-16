@@ -1,5 +1,3 @@
-. "$PSScriptRoot\..\Helpers\Write-Output.ps1"
-
 function Disable-Services {
     # List of services to be disabled
     $services = @(
