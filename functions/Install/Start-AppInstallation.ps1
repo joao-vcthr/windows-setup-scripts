@@ -3,7 +3,7 @@ function Start-AppInstallation {
     $selected = $script:PSBoundParameters
     $installOrder = $packages["Order"]
 
-    if ($selected.ContainsKey("All")) {
+    if ($selected.Count -eq 0 -or $selected.ContainsKey("All")) {
 
         foreach ($group in $installOrder) {
             Install-PackageGroup -GroupName $group
