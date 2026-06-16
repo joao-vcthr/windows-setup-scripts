@@ -20,13 +20,14 @@
     Requirements: Must be run as Administrator. An internet connection is required for synchronisation and Winget configuration.
 #>
 
+. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 . "$PSScriptRoot\functions\Set\Set-SystemClock.ps1"
 . "$PSScriptRoot\functions\Set\Set-PowerPlan.ps1"
 . "$PSScriptRoot\functions\Set\Set-Network.ps1"
 . "$PSScriptRoot\functions\Set\Set-KeyboardLayout.ps1"
-. "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
-Write-Header "Starting Initial Setup..."
+
+Write-Header "Starting Basic Setup..."
 
 Set-SystemClock
 Set-Network
@@ -38,4 +39,4 @@ winget source update
 winget install --id Microsoft.PowerShell --source winget --exact --accept-package-agreements --accept-source-agreements
 winget settings --enable InstallerHashOverride
 
-Write-Ok "Initial Setup Done!"
+Write-Ok "Basic Setup Done!"
