@@ -66,8 +66,7 @@
         { "Id": "EpicGames.EpicGamesLauncher", "Source": "winget" },
         { "Id": "ElectronicArts.EADesktop", "Source": "winget" },
         { "Id": "Ubisoft.Connect", "Source": "winget" },
-        { "Id": "GOG.Galaxy", "Source": "winget" },
-        { "Id": "Blizzard.BattleNet", "Source": "winget", "Args": ["--location", "C:\\Program Files (x86)\\Battle.net"] }
+        { "Id": "GOG.Galaxy", "Source": "winget" }
     ],
 
     "ProgrammingLanguages": [
