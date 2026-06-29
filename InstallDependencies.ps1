@@ -30,7 +30,7 @@ param (
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\config\Dependencies.json"
+$packagesFile = "$PSScriptRoot\packages\Dependencies.json"
 
 if (-not (Test-Path $packagesFile)) {
     Write-Host "==> Error: packages.json not found at $packagesFile" -ForegroundColor Red
