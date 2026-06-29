@@ -42,7 +42,7 @@ vssadmin delete shadows /all /quiet
 
 Write-Header "Optimizing Disks"
 Optimize-Volume -DriveLetter 'C' -Verbose -ReTrim
-# Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim
+Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim
 
 Write-Ok "Optimization completed! The computer will restart in 5 seconds"
 
