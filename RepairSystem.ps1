@@ -16,6 +16,7 @@
     Date:        04/28/2026
     Requirements: Must be run as Administrator. A restart is required to finalise disk repairs.
 #>
+
 . "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
 
 $ErrorActionPreference = "Stop"
@@ -27,4 +28,4 @@ sfc /scannow
 Repair-Volume -DriveLetter C -OfflineScanAndFix -Confirm:$false
 Repair-Volume -DriveLetter D -OfflineScanAndFix -Confirm:$false
 
-Write-Ok "System repair completed!"
+Write-Ok "System repair completed! Restart the computer"
