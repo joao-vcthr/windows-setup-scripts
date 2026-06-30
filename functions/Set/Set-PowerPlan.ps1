@@ -33,7 +33,7 @@ function Set-PowerPlanBalanced {
 
     powercfg.exe /hibernate off # Disable Hibernation
 
-    Write-Ok "Power plan configured!" -ForegroundColor Green
+    Write-Ok "Power plan configured!"
 }
 
 function Select-PowerPlan {

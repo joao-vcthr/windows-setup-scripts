@@ -37,7 +37,7 @@ param (
 $packagesFile = "$PSScriptRoot\packages\Applications.json"
 
 if (-not (Test-Path $packagesFile)) {
-    Write-Host "==> Error: packages.json not found at $packagesFile" -ForegroundColor Red
+    Write-Fail "==> Error: packages.json not found at $packagesFile"
     exit 1
 }
 
@@ -51,4 +51,4 @@ Write-Header "Installing Apps..."
 
 Start-AppInstallation @PSBoundParameters
 
-Write-Ok "Apps installed!" -ForegroundColor Green
+Write-Ok "Apps installed!"

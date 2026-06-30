@@ -33,7 +33,7 @@ param (
 $packagesFile = "$PSScriptRoot\packages\Dependencies.json"
 
 if (-not (Test-Path $packagesFile)) {
-    Write-Host "==> Error: packages.json not found at $packagesFile" -ForegroundColor Red
+    Write-Fail "==> Error: packages.json not found at $packagesFile"
     exit 1
 }
 

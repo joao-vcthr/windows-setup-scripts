@@ -54,7 +54,7 @@ function Disable-Telemetry {
     Write-Header "Blocking acess to language list..."
     Set-RegistryValue -Path "HKCU:\Control Panel\International\User Profile" -Name "HttpAcceptLanguageOptOut" -Value 1
 
-    Write-Ok "Telemetry Disabled!" -ForegroundColor Green
+    Write-Ok "Telemetry Disabled!"
 }
 
 function Disable-AppPermissions {
@@ -89,10 +89,10 @@ function Disable-AppPermissions {
     # --- Automatic File Downloads ---
     # Controlado separadamente (OneDrive Files On-Demand), em HKCU.
     # Valor 1 no DWORD "Enabled" = bloqueia downloads automáticos de arquivos na nuvem.
-    Write-Header "[CloudFiles] Disabling: Automatic File Downloads" -ForegroundColor Cyan
+    Write-Header "[CloudFiles] Disabling: Automatic File Downloads"
     Set-RegistryValue -Path "HKCU:\Software\Policies\Microsoft\CloudFiles" `
                       -Name "DisableLibraryRehydration" `
                       -Value 1
 
-    Write-Ok "App permissions disabled!" -ForegroundColor Green
+    Write-Ok "App permissions disabled!"
 }

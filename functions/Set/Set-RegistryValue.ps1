@@ -33,7 +33,7 @@ function Set-RegistryValue {
             Set-ItemProperty -Path $Path -Name $Name -Value $Value
         }
 
-        Write-Ok "'$Name' defined as '$Value' at '$Path'" -ForegroundColor Green
+        Write-Ok "'$Name' defined as '$Value' at '$Path'"
     }
     catch {
         Write-Fail "Error defining registry value: $_"

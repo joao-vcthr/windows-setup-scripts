@@ -47,4 +47,4 @@ Disable-Features
 
 # ─── Done ────────────────────────────────────────────────────────────────────
 Write-Host ''
-Write-Ok "Done. A restart may be required for some changes to take effect." -ForegroundColor Yellow
+Write-Ok "Done. A restart may be required for some changes to take effect."
