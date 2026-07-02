@@ -44,7 +44,4 @@ Write-Header "Optimizing Disks"
 Optimize-Volume -DriveLetter 'C' -Verbose -ReTrim
 Optimize-Volume -DriveLetter 'D' -Verbose -ReTrim
 
-Write-Ok "Optimization completed! The computer will restart in 5 seconds"
-
-Start-Sleep 5
-Restart-Computer
+Write-Ok "Optimization completed! Restart the computer"
