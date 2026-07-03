@@ -40,9 +40,6 @@ if (-not (Test-Path $packagesFile)) {
 $packages = Get-Content $packagesFile | ConvertFrom-Json -AsHashtable
 $installOrder = $packages["Order"]
 
-# Update winget
-winget source update
-
 Write-Header "Installing dependencies..."
 
 DISM /Online /Enable-Feature /FeatureName:NetFx3 /All # Enable .NET 3.5
