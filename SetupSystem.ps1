@@ -33,7 +33,7 @@ Set-SystemClock
 Set-Network
 Set-KeyboardLayout
 Set-DODownloadMode -DownloadMode 0 # Disable Delivery Optimisation
-Select-PowerPlan
+Set-PowerPlan
 
 winget source update
 winget install --id Microsoft.PowerShell --source winget --exact --accept-package-agreements --accept-source-agreements
