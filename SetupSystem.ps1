@@ -36,7 +36,6 @@ Set-DODownloadMode -DownloadMode 0 # Disable Delivery Optimisation
 Set-PowerPlan
 
 winget source update
-winget install --id Microsoft.PowerShell --source winget --exact --accept-package-agreements --accept-source-agreements
 winget settings --enable InstallerHashOverride
 
 Write-Ok "Basic Setup Done!"
