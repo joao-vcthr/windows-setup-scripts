@@ -30,19 +30,22 @@ param (
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\packages\Dependencies.json"
+$packagesFile = "$PSScriptRoot\packages\Dependencies.psd1"
 
 if (-not (Test-Path $packagesFile)) {
-    Write-Fail "==> Error: packages.json not found at $packagesFile"
+    Write-Fail "==> Error: Dependencies.psd1 not found at $packagesFile"
     exit 1
 }
 
-$packages = Get-Content $packagesFile | ConvertFrom-Json -AsHashtable
+$packages = Import-PowerShellDataFile -Path $packagesFile
 $installOrder = $packages["Order"]
 
 Write-Header "Installing dependencies..."
 
-DISM /Online /Enable-Feature /FeatureName:NetFx3 /All # Enable .NET 3.5
+if ($PSBoundParameters.Count -eq 0 -or $PSBoundParameters.ContainsKey("All") -or $PSBoundParameters.ContainsKey("DotNet")) {
+    DISM /Online /Enable-Feature /FeatureName:NetFx3 /All # Enable .NET 3.5
+}
+
 Start-AppInstallation @PSBoundParameters
 
 Write-Ok "Dependencies installed! Restart the computer."

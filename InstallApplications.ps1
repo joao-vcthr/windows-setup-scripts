@@ -5,7 +5,7 @@
     Installs desktop applications via Winget and MS Store using switch parameters.
 .DESCRIPTION
     Automated installation script for various software categories.
-    Package list is defined externally in packages.json.
+    Package list is defined externally in Applications.psd1.
 .NOTES
     Author:      joao-vcthr
     Date:        09/21/2025
@@ -34,14 +34,14 @@ param (
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\packages\Applications.json"
+$packagesFile = "$PSScriptRoot\packages\Applications.psd1"
 
 if (-not (Test-Path $packagesFile)) {
-    Write-Fail "==> Error: packages.json not found at $packagesFile"
+    Write-Fail "==> Error: Applications.psd1 not found at $packagesFile"
     exit 1
 }
 
-$packages = Get-Content $packagesFile | ConvertFrom-Json -AsHashtable
+$packages = Import-PowerShellDataFile -Path $packagesFile
 $installOrder = $packages["Order"]
 
 Write-Header "Installing Apps..."
