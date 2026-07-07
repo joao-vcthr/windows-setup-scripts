@@ -1,13 +1,8 @@
 function Disable-Features {
     [CmdletBinding(SupportsShouldProcess)]
-    param()
-
-    $Features = @(
-        'MediaPlayback'
-        'MicrosoftWindowsPowerShellV2Root'
-        'Microsoft-RemoteDesktopConnection'
-        'Recall'
-        'Microsoft-SnippingTool'
+    param(
+        [Parameter(Mandatory)]
+        [string[]]$Features
     )
 
     foreach ($Name in $Features) {
@@ -32,4 +27,6 @@ function Disable-Features {
             }
         }
     }
+
+    Write-Ok "Features disabled!"
 }
