@@ -27,12 +27,21 @@
 . "$PSScriptRoot\functions\Set\Set-KeyboardLayout.ps1"
 
 
-Write-Header "Starting Basic Setup..."
+Write-Header "Starting Basic Setup"
 
+Write-Header "Setting the System Clock"
 Set-SystemClock
+
+Write-Header "Setting the Network"
 Set-Network
+
+Write-Header "Setting the Keyboard Layout"
 Set-KeyboardLayout
+
+Write-Header "Disbaling Delivery Optimisation"
 Set-DODownloadMode -DownloadMode 0 # Disable Delivery Optimisation
+
+Write-Header "Setting the Power Plan"
 Set-PowerPlan
 
 winget source update
