@@ -1,5 +1,3 @@
-. "$PSScriptRoot\..\Set\Set-RegistryValue.ps1"
-
 function Disable-GameDVR {
 
     # Configurações de Usuário (HKCU)
