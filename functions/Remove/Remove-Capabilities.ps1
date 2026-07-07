@@ -1,28 +1,13 @@
 function Remove-Capabilities {
     [CmdletBinding(SupportsShouldProcess)]
-    param()
-
-    $Capabilities = @(
-        'Print.Fax.Scan'
-        'Language.Handwriting'
-        'Browser.InternetExplorer'
-        'MathRecognizer'
-        'OneCoreUAP.OneSync'
-        'OpenSSH.Client'
-        'Microsoft.Windows.MSPaint'
-        'Microsoft.Windows.PowerShell.ISE'
-        'App.Support.QuickAssist'
-        'Microsoft.Windows.SnippingTool'
-        'Language.Speech'
-        'Language.TextToSpeech'
-        'App.StepsRecorder'
-        'Media.WindowsMediaPlayer'
-        'Microsoft.Windows.WordPad'
+    param(
+        [Parameter(Mandatory)]
+        [string[]]$Capabilities
     )
 
     # Get-WindowsCapability precisa do Windows Update para buscar metadados;
     # garante que o servico esta rodando e restaura o estado original ao final.
-    $wuauserv          = Get-Service -Name wuauserv
+    $wuauserv           = Get-Service -Name wuauserv
     $wuauservWasRunning = $wuauserv.Status -eq 'Running'
 
     if (-not $wuauservWasRunning) {
@@ -61,4 +46,6 @@ function Remove-Capabilities {
             Stop-Service -Name wuauserv
         }
     }
+
+    Write-Ok "Capabilities removed!"
 }
