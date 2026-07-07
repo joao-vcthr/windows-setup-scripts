@@ -1,34 +1,27 @@
 function Disable-Services {
-    # List of services to be disabled
-    $services = @(
-        "WSearch",          # Windows Search
-        "Spooler",          # Print Spooler
-        "Fax",              # Fax
-        "WerSvc",           # Windows Error Reporting
-        "RemoteRegistry",   # Remote Registry
-        "TermService",      # Remote Desktop Services
-        "TabletInputService", # Touch Keyboard & Handwriting
-        "seclogon",         # Secondary Logon
-        "SCardSvr",         # Smart Card
-        "SCPolicySvc",      # Smart Card Policy
-        "SysMain",          # SysMain
-        # "WbioSrvc",         # Windows Biometric Service
-        "MapsBroker",       # Downloaded Maps Manager
-        "CscService",       # Offline Files
-        "RasMan",           # Remote Access Connection Manager
-        "RemoteAccess",     # Routing and Remote Access
-        "RetailDemo",       # Retail Demo Service
-        "diagnosticshub.standardcollector.service", # Diagnostics Hub
-        "DiagTrack",        # Connected User Experiences & Telemetry
-        "dmwappushservice", # Device Management Wireless Application Protocol
-        "DoSvc", # Delivery Optimization
-        "lfsvc" # Geolocation
+    [CmdletBinding(SupportsShouldProcess)]
+    param(
+        [Parameter(Mandatory)]
+        [string[]]$Services
     )
 
-foreach ($s in $services) {
-    Write-Running "Disabling service: $s"
-    Stop-Service -Name $s -Force -ErrorAction SilentlyContinue
-    Set-Service -Name $s -StartupType Disabled -ErrorAction SilentlyContinue
+    foreach ($Name in $Services) {
+        $svc = Get-Service -Name $Name -ErrorAction SilentlyContinue
+
+        if (-not $svc) {
+            Write-Skip $Name
+            continue
+        }
+
+        if ($PSCmdlet.ShouldProcess($Name, 'Stop and disable service')) {
+            try {
+                Stop-Service -Name $Name -Force -ErrorAction SilentlyContinue
+                Set-Service -Name $Name -StartupType Disabled -ErrorAction Stop
+                Write-Ok $Name
+            } catch {
+                Write-Fail "$Name -- $($_.Exception.Message)"
+            }
+        }
     }
 
     Write-Ok "Services disabled!"
