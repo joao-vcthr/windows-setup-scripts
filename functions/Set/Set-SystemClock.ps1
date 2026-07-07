@@ -1,6 +1,4 @@
-function Set-SystemClock {
-    Write-Header "Setting system clock..."
-    
+function Set-SystemClock { 
     Write-Running "Setting time zone to Brasília..."
     Set-TimeZone -Id "E. South America Standard Time"
     

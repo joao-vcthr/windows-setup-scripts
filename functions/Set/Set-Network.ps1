@@ -1,6 +1,4 @@
-function Set-Network {
-    Write-Header "Configuring network"
-    
+function Set-Network {  
     Write-Running "Clearing old DNS cache..."
     Clear-DnsClientCache
 
