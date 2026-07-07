@@ -1,7 +1,7 @@
 function Write-Header {
     param ([string] $Title)
     Write-Host ""
-    Write-Host "===  $Title  " -ForegroundColor Cyan
+    Write-Host "===  [$Title]  ===" -ForegroundColor Cyan
 }
 
 function Write-Ok {
