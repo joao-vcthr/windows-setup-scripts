@@ -19,6 +19,7 @@ param (
     [switch]$Productivity,
     [switch]$Office,
     [switch]$Hardware,
+    [switch]$Security,
     [switch]$Media,
     [switch]$Maintenance,
     [switch]$Compression,
