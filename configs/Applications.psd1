@@ -6,6 +6,7 @@
         'Communication'
         'ScreenCapture'
         'Hardware'
+        'Security'
         'Media'
         'Maintenance'
         'Compression'
@@ -45,6 +46,10 @@
         @{ Id = 'CPUID.CPU-Z'; Source = 'winget' }
         @{ Id = 'TechPowerUp.GPU-Z'; Source = 'winget' }
         @{ Id = 'Fastfetch-cli.Fastfetch'; Source = 'winget' }
+    )
+
+    Security = @(
+        @{ Id = 'KeePassXCTeam.KeePassXC'; Source = 'winget'}
     )
 
     Media = @(
