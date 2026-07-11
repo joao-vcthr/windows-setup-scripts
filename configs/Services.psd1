@@ -1,5 +1,5 @@
 @{
-    $services = @(
+    Services = @(
         "WSearch",          # Windows Search
         "Spooler",          # Print Spooler
         "Fax",              # Fax

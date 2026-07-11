@@ -1,5 +1,5 @@
 @{
-    $Features = @(
+    Features = @(
         'MediaPlayback'
         'MicrosoftWindowsPowerShellV2Root'
         'Microsoft-RemoteDesktopConnection'

@@ -1,5 +1,5 @@
 @{
-    $Packages = @(
+    Packages = @(
         'Microsoft.Microsoft3DViewer'
         'Microsoft.BingSearch'
         'Microsoft.WindowsCamera'

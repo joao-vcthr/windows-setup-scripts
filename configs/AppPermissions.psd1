@@ -1,5 +1,5 @@
 @{
-    $permissions = @(
+    Permissions = @(
         @{ Name = "LetAppsAccessLocation";    Label = "Location"               },
         @{ Name = "LetAppsAccessCamera";      Label = "Camera"                 },
         @{ Name = "LetAppsAccessAccountInfo"; Label = "Account Info"           },

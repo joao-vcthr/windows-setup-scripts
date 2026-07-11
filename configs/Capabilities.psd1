@@ -1,5 +1,5 @@
 @{
-    $Capabilities = @(
+    Capabilities = @(
         'Print.Fax.Scan'
         'Language.Handwriting'
         'Browser.InternetExplorer'
