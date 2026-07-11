@@ -30,7 +30,7 @@ param (
 . "$PSScriptRoot\functions\Install\Start-AppInstallation.ps1"
 
 # --- Load Packages ---
-$packagesFile = "$PSScriptRoot\packages\Dependencies.psd1"
+$packagesFile = "$PSScriptRoot\configs\Dependencies.psd1"
 
 if (-not (Test-Path $packagesFile)) {
     Write-Fail "==> Error: Dependencies.psd1 not found at $packagesFile"
