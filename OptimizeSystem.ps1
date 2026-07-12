@@ -65,8 +65,7 @@ Write-Header "Disabling MultiPlane Overlay (MPO)"
 Disable-MPO
 
 Write-Header "Disabling System Restore..."
-Disable-ComputerRestore -Drive "C:\"
-Disable-ComputerRestore -Drive "D:\"
+Disable-ComputerRestore "C:\", "D:\"
 vssadmin delete shadows /all /quiet
 
 Write-Header "Optimizing Disks"
