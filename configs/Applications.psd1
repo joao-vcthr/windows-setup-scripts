@@ -16,77 +16,81 @@
     )
 
     Browsers = @(
-        @{ Id = 'Mozilla.Firefox'; Source = 'winget' }
+        @{ Id = 'Mozilla.Firefox' }
     )
 
     Productivity = @(
-        @{ Id = 'Obsidian.Obsidian'; Source = 'winget' }
-        @{ Id = 'Doist.Todoist'; Source = 'winget' }
-        @{ Id = 'flxzt.rnote'; Source = 'winget' }
-        @{ Id = 'Mozilla.Thunderbird.MSIX'; Source = 'winget' }
+        @{ Id = 'Obsidian.Obsidian' }
+        @{ Id = 'Doist.Todoist' }
+        @{ Id = 'flxzt.rnote' }
+        @{ Id = 'Mozilla.Thunderbird.MSIX' }
     )
 
     Communication = @(
-        @{ Id = 'Telegram.TelegramDesktop'; Source = 'winget' }
-        @{ Id = 'Discord.Discord'; Source = 'winget' }
+        @{ Id = 'Telegram.TelegramDesktop' }
+        @{ Id = 'Discord.Discord' }
     )
 
     Office = @(
-        @{ Id = 'TheDocumentFoundation.LibreOffice'; Source = 'winget' }
-        @{ Id = 'Foxit.FoxitReader'; Source = 'winget' }
+        @{ Id = 'TheDocumentFoundation.LibreOffice' }
+        @{ Id = 'Foxit.FoxitReader' }
     )
 
     ScreenCapture = @(
-        @{ Id = 'ShareX.ShareX'; Source = 'winget' }
-        @{ Id = 'OBSProject.OBSStudio'; Source = 'winget' }
+        @{ Id = 'ShareX.ShareX' }
+        @{ Id = 'OBSProject.OBSStudio' }
     )
 
     Hardware = @(
-        @{ Id = 'REALiX.HWiNFO'; Source = 'winget' }
-        @{ Id = 'CPUID.CPU-Z'; Source = 'winget' }
-        @{ Id = 'TechPowerUp.GPU-Z'; Source = 'winget' }
-        @{ Id = 'Fastfetch-cli.Fastfetch'; Source = 'winget' }
+        @{ Id = 'REALiX.HWiNFO' }
+        @{ Id = 'CPUID.CPU-Z' }
+        @{ Id = 'TechPowerUp.GPU-Z' }
+        @{ Id = 'Fastfetch-cli.Fastfetch' }
     )
 
     Security = @(
-        @{ Id = 'KeePassXCTeam.KeePassXC'; Source = 'winget'}
+        @{ Id = 'KeePassXCTeam.KeePassXC'}
     )
 
     Media = @(
-        @{ Id = 'VideoLAN.VLC'; Source = 'winget' }
-        @{ Id = 'FxSound.FxSound'; Source = 'winget' }
+        @{ Id = 'VideoLAN.VLC' }
+        @{ Id = 'FxSound.FxSound' }
     )
 
     Maintenance = @(
-        @{ Id = 'BleachBit.BleachBit'; Source = 'winget' }
-        @{ Id = 'Klocman.BulkCrapUninstaller'; Source = 'winget' }
+        @{ Id = 'BleachBit.BleachBit' }
+        @{ Id = 'Klocman.BulkCrapUninstaller' }
     )
 
     Compression = @(
-        @{ Id = '9N8G7TSCL18R'; Source = 'msstore' }
+        @{ Id = '9N8G7TSCL18R' }
     )
 
     Gaming = @(
-        @{ Id = 'Valve.Steam'; Source = 'winget' }
-        @{ Id = 'RiotGames.LeagueOfLegends.BR'; Source = 'winget' }
-        @{ Id = 'EpicGames.EpicGamesLauncher'; Source = 'winget' }
-        @{ Id = 'ElectronicArts.EADesktop'; Source = 'winget' }
-        @{ Id = 'Ubisoft.Connect'; Source = 'winget' }
-        @{ Id = 'GOG.Galaxy'; Source = 'winget' }
+        @{ Id = 'Valve.Steam' }
+        @{ Id = 'RiotGames.LeagueOfLegends.BR' }
+        @{ Id = 'EpicGames.EpicGamesLauncher' }
+        @{ Id = 'ElectronicArts.EADesktop' }
+        @{ Id = 'Ubisoft.Connect' }
+        @{ Id = 'GOG.Galaxy' }
     )
 
     ProgrammingLanguages = @(
-        @{ Id = 'Rustlang.Rustup'; Source = 'winget' }
-        @{ Id = 'LLVM.LLVM'; Source = 'winget' }
-        @{ Id = 'Oracle.JDK.25'; Source = 'winget' }
-        @{ Id = 'GoLang.Go'; Source = 'winget' }
+        @{ Id = 'Rustlang.Rustup' }
+        @{ Id = 'LLVM.LLVM' }
+        @{ Id = 'Oracle.JDK.25' }
+        @{ Id = 'GoLang.Go' }
     )
 
     DevelopmentTools = @(
-        @{ Id = 'Microsoft.WindowsTerminal'; Source = 'winget' }
-        @{ Id = 'Microsoft.VisualStudioCode'; Source = 'winget' }
-        @{ Id = 'Microsoft.VisualStudio.BuildTools'; Source = 'winget' }
-        @{ Id = 'JetBrains.Toolbox'; Source = 'winget' }
-        @{ Id = 'Git.Git'; Source = 'winget' }
+        @{ Id = 'Microsoft.WindowsTerminal' }
+        @{ Id = 'Microsoft.VisualStudioCode' }
+        @{ Id = 'Microsoft.VisualStudio.BuildTools' }
+        @{ Id = 'JetBrains.Toolbox' }
+        @{ Id = 'JetBrains.RustRover' }
+        @{ Id = 'JetBrains.CLion' }
+        @{ Id = 'JetBrains.GoLand' }
+        @{ Id = 'JetBrains.IntelliJIDEA' }
+        @{ Id = 'Git.Git' }
     )
 }
