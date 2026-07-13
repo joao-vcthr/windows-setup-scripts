@@ -2,11 +2,12 @@
     Order = @(
         'Browsers'
         'Productivity'
-        'Office'
         'Communication'
+        'Security'
+        'Office'
         'ScreenCapture'
         'Hardware'
-        'Security'
+        'CLI'
         'Media'
         'Maintenance'
         'Compression'
@@ -29,6 +30,11 @@
     Communication = @(
         @{ Id = 'Telegram.TelegramDesktop' }
         @{ Id = 'Discord.Discord' }
+        @{ Id = '9NBDXK71NK08'} # WhatsApp Beta
+    )
+
+    Security = @(
+        @{ Id = 'KeePassXCTeam.KeePassXC'}
     )
 
     Office = @(
@@ -45,11 +51,12 @@
         @{ Id = 'REALiX.HWiNFO' }
         @{ Id = 'CPUID.CPU-Z' }
         @{ Id = 'TechPowerUp.GPU-Z' }
-        @{ Id = 'Fastfetch-cli.Fastfetch' }
+        
     )
 
-    Security = @(
-        @{ Id = 'KeePassXCTeam.KeePassXC'}
+    CLI = @(
+        @{ Id = 'Fastfetch-cli.Fastfetch' }
+        @{ Id = 'Ookla.Speedtest.CLI' }
     )
 
     Media = @(
