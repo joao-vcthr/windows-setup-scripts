@@ -53,13 +53,13 @@ Remove-AppxPackages -Packages $appxPackages.Packages
 Write-Header 'Removing Optional Capabilities'
 Remove-Capabilities -Capabilities $capabilities.Capabilities
 
-# ─── Remove OneDrive ─────────────────────────────────────────────────────────
-Write-Header 'Removing OneDrive'
-Remove-OneDrive
-
 # ─── Disable Optional Features ──────────────────────────────────────────────
 Write-Header 'Disabling Optional Features'
 Disable-Features -Features $features.Features
+
+# ─── Remove OneDrive ─────────────────────────────────────────────────────────
+Write-Header 'Removing OneDrive'
+Remove-OneDrive
 
 # ─── Done ────────────────────────────────────────────────────────────────────
 Write-Host ''
