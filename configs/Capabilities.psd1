@@ -16,5 +16,4 @@
         'Media.WindowsMediaPlayer'
         'Microsoft.Windows.WordPad'
     )
-
 }
