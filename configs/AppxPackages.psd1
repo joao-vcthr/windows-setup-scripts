@@ -6,7 +6,8 @@
         'Clipchamp.Clipchamp'
         'Microsoft.WindowsAlarms'
         'Microsoft.Copilot'
-        'Microsoft.549981C3F5F10'         # Cortana
+        'Microsoft.Windows.Ai.Copilot.Provider'
+        'Microsoft.549981C3F5F10'  # Cortana
         'Microsoft.Windows.DevHome'
         'MicrosoftCorporationII.MicrosoftFamily'
         'Microsoft.WindowsFeedbackHub'
@@ -19,6 +20,7 @@
         'Microsoft.BingNews'
         'Microsoft.MicrosoftOfficeHub'
         'Microsoft.Office.OneNote'
+        'Microsoft.OutlookForWindows'
         'Microsoft.Paint'
         'Microsoft.MSPaint'
         'Microsoft.People'
@@ -34,6 +36,7 @@
         'Microsoft.WindowsSoundRecorder'
         'Microsoft.Wallet'
         'Microsoft.BingWeather'
+        'Microsoft.WindowsTerminal'
         'Microsoft.YourPhone'
         'Microsoft.ZuneMusic'
         'Microsoft.ZuneVideo'
