@@ -22,8 +22,6 @@ function Disable-AppPermissions {
     }
 
     # --- Automatic File Downloads ---
-    # Controlado separadamente (OneDrive Files On-Demand), em HKCU.
-    # Valor 1 no DWORD "DisableLibraryRehydration" bloqueia downloads automaticos de arquivos na nuvem.
     Write-Running "[CloudFiles] Disabling: Automatic File Downloads"
 
     if ($PSCmdlet.ShouldProcess('Automatic File Downloads', 'Disable')) {

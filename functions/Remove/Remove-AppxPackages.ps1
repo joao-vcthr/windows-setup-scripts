@@ -6,7 +6,7 @@ function Remove-AppxPackages {
     )
 
     foreach ($Name in $Packages) {
-        # Get-AppxPackage pode retornar multiplos resultados (ex.: pacote por usuario + provisionado)
+        
         $found = Get-AppxPackage -Name $Name -AllUsers -ErrorAction SilentlyContinue
 
         if (-not $found) {
@@ -18,8 +18,6 @@ function Remove-AppxPackages {
             try {
                 $found | Remove-AppxPackage -AllUsers -ErrorAction Stop
 
-                # Remove tambem o pacote provisionado para que nao seja reinstalado
-                # em novas contas de usuario
                 $provisioned = Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue |
                                Where-Object { $_.DisplayName -like $Name }
                 if ($provisioned) {

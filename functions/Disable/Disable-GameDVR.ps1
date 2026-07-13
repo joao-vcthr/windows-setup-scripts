@@ -1,6 +1,6 @@
 function Disable-GameDVR {
 
-    # Configurações de Usuário (HKCU)
+    # User Settings
     $paths = @(
         @{
             Path = "HKCU:\System\GameConfigStore"
@@ -26,7 +26,7 @@ function Disable-GameDVR {
         }
     }
 
-    # Configurações de Máquina/Política (HKLM)
+    # Local Machine Settings
     $policyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR"
 
     Write-Running "Disabling AllowGameDVR global policy"
