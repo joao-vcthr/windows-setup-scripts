@@ -39,7 +39,7 @@
 
     Office = @(
         @{ Id = 'TheDocumentFoundation.LibreOffice' }
-        @{ Id = 'Foxit.FoxitReader' }
+        @{ Id = 'StirlingTools.StirlingPDF' }
     )
 
     ScreenCapture = @(
@@ -51,7 +51,6 @@
         @{ Id = 'REALiX.HWiNFO' }
         @{ Id = 'CPUID.CPU-Z' }
         @{ Id = 'TechPowerUp.GPU-Z' }
-        
     )
 
     CLI = @(
@@ -70,7 +69,7 @@
     )
 
     Compression = @(
-        @{ Id = '9N8G7TSCL18R' }
+        @{ Id = '9N8G7TSCL18R' } # NanaZip
     )
 
     Gaming = @(
