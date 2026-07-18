@@ -26,13 +26,14 @@ param()
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+. "$PSScriptRoot\functions\Helpers\Set-RegistryValue.ps1"
 . "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
-. "$PSScriptRoot\functions\Set\Set-RegistryValue.ps1"
-. "$PSScriptRoot\functions\Disable\Disable-GameDVR.ps1"
-. "$PSScriptRoot\functions\Disable\Disable-Services.ps1"
-. "$PSScriptRoot\functions\Disable\Disable-Telemetry.ps1"
 . "$PSScriptRoot\functions\Disable\Disable-AppPermissions.ps1"
+. "$PSScriptRoot\functions\Disable\Disable-GameDVR.ps1"
 . "$PSScriptRoot\functions\Disable\Disable-MPO.ps1"
+. "$PSScriptRoot\functions\Disable\Disable-Services.ps1"
+. "$PSScriptRoot\functions\Disable\Disable-SystemRestore.ps1"
+. "$PSScriptRoot\functions\Disable\Disable-Telemetry.ps1"
 
 $servicesFile    = "$PSScriptRoot\configs\Services.psd1"
 $permissionsFile = "$PSScriptRoot\configs\AppPermissions.psd1"
@@ -65,8 +66,7 @@ Write-Header "Disabling MultiPlane Overlay (MPO)"
 Disable-MPO
 
 Write-Header "Disabling System Restore..."
-Disable-ComputerRestore "C:\", "D:\"
-vssadmin delete shadows /all /quiet
+Disable-SystemRestore
 
 Write-Header "Optimizing Disks"
 Optimize-Volume -DriveLetter 'C' -Verbose -ReTrim
