@@ -93,10 +93,6 @@
         @{ Id = 'Microsoft.VisualStudioCode' }
         @{ Id = 'Microsoft.VisualStudio.BuildTools' }
         @{ Id = 'JetBrains.Toolbox' }
-        @{ Id = 'JetBrains.RustRover' }
-        @{ Id = 'JetBrains.CLion' }
-        @{ Id = 'JetBrains.GoLand' }
-        @{ Id = 'JetBrains.IntelliJIDEA' }
         @{ Id = 'Git.Git' }
     )
 }
