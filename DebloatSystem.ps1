@@ -23,8 +23,8 @@ param()
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+. "$PSScriptRoot\functions\Helpers\Set-RegistryValue.ps1"
 . "$PSScriptRoot\functions\Helpers\Write-Output.ps1"
-. "$PSScriptRoot\functions\Set\Set-RegistryValue.ps1"
 . "$PSScriptRoot\functions\Remove\Remove-AppxPackages.ps1"
 . "$PSScriptRoot\functions\Remove\Remove-Capabilities.ps1"
 . "$PSScriptRoot\functions\Remove\Remove-OneDrive.ps1"
