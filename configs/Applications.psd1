@@ -76,9 +76,7 @@
         @{ Id = 'Valve.Steam' }
         @{ Id = 'RiotGames.LeagueOfLegends.BR' }
         @{ Id = 'EpicGames.EpicGamesLauncher' }
-        @{ Id = 'ElectronicArts.EADesktop' }
-        @{ Id = 'Ubisoft.Connect' }
-        @{ Id = 'GOG.Galaxy' }
+        @{ Id = 'XPDM5VSMTKQLBJ' } # Battle.net
     )
 
     ProgrammingLanguages = @(
