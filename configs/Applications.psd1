@@ -65,7 +65,8 @@
 
     Maintenance = @(
         @{ Id = 'BleachBit.BleachBit' }
-        @{ Id = 'Klocman.BulkCrapUninstaller' }
+        @{ Id = 'Klocman.BulkCrapUninstaller' } 
+        @{ Id = 'AdventDevelopmentInc.Kudu' }
     )
 
     Compression = @(
