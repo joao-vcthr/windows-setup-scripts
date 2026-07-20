@@ -19,4 +19,6 @@ function Remove-OneDrive {
 	Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -Type DWord -Value 1
 
 	Start-Process explorer.exe
+
+	Write-Ok "OneDrive Removed"
 }
