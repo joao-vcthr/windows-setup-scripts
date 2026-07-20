@@ -17,81 +17,82 @@
     )
 
     Browsers = @(
-        @{ Id = 'Mozilla.Firefox' }
+        @{ Id = 'Mozilla.Firefox'; Source = 'winget' }
     )
 
     Productivity = @(
-        @{ Id = 'Obsidian.Obsidian' }
-        @{ Id = 'Doist.Todoist' }
-        @{ Id = 'flxzt.rnote' }
-        @{ Id = 'Mozilla.Thunderbird.MSIX' }
+        @{ Id = 'Obsidian.Obsidian'; Source = 'winget' }
+        @{ Id = 'Doist.Todoist'; Source = 'winget' }
+        @{ Id = 'flxzt.rnote'; Source = 'winget' }
+        @{ Id = 'Mozilla.Thunderbird.MSIX'; Source = 'winget' }
     )
 
     Communication = @(
-        @{ Id = 'Telegram.TelegramDesktop' }
-        @{ Id = 'Discord.Discord' }
-        @{ Id = '9NBDXK71NK08'} # WhatsApp Beta
+        @{ Id = 'Telegram.TelegramDesktop'; Source = 'winget' }
+        @{ Id = 'Discord.Discord'; Source = 'winget' }
+        @{ Id = '9NBDXK71NK08'; Source = 'msstore'} # WhatsApp Beta
     )
 
     Security = @(
-        @{ Id = 'KeePassXCTeam.KeePassXC'}
+        @{ Id = 'KeePassXCTeam.KeePassXC'; Source = 'winget'}
     )
 
     Office = @(
-        @{ Id = 'TheDocumentFoundation.LibreOffice' }
-        @{ Id = 'StirlingTools.StirlingPDF' }
+        @{ Id = 'TheDocumentFoundation.LibreOffice'; Source = 'winget' }
+        @{ Id = 'StirlingTools.StirlingPDF'; Source = 'winget' }
     )
 
     ScreenCapture = @(
-        @{ Id = 'ShareX.ShareX' }
-        @{ Id = 'OBSProject.OBSStudio' }
+        @{ Id = 'ShareX.ShareX'; Source = 'winget' }
+        @{ Id = 'OBSProject.OBSStudio'; Source = 'winget' }
     )
 
     Hardware = @(
-        @{ Id = 'REALiX.HWiNFO' }
-        @{ Id = 'CPUID.CPU-Z' }
-        @{ Id = 'TechPowerUp.GPU-Z' }
+        @{ Id = 'REALiX.HWiNFO'; Source = 'winget' }
+        @{ Id = 'CPUID.CPU-Z'; Source = 'winget'}
+        @{ Id = 'TechPowerUp.GPU-Z'; Source = 'winget' }
     )
 
     CLI = @(
-        @{ Id = 'Fastfetch-cli.Fastfetch' }
-        @{ Id = 'Ookla.Speedtest.CLI' }
+        @{ Id = 'Fastfetch-cli.Fastfetch'; Source = 'winget' }
+        @{ Id = 'Ookla.Speedtest.CLI'; Source = 'winget' }
     )
 
     Media = @(
-        @{ Id = 'VideoLAN.VLC' }
-        @{ Id = 'FxSound.FxSound' }
+        @{ Id = 'VideoLAN.VLC'; Source = 'winget' }
+        @{ Id = 'FxSound.FxSound'; Source = 'winget' }
     )
 
     Maintenance = @(
-        @{ Id = 'BleachBit.BleachBit' }
-        @{ Id = 'Klocman.BulkCrapUninstaller' } 
-        @{ Id = 'AdventDevelopmentInc.Kudu' }
+        @{ Id = 'BleachBit.BleachBit'; Source = 'winget' }
+        @{ Id = 'Klocman.BulkCrapUninstaller'; Source = 'winget' } 
+        @{ Id = 'AdventDevelopmentInc.Kudu'; Source = 'winget' }
     )
 
     Compression = @(
-        @{ Id = '9N8G7TSCL18R' } # NanaZip
+        @{ Id = '9N8G7TSCL18R'; Source = 'msstore' } # NanaZip
     )
 
     Gaming = @(
-        @{ Id = 'Valve.Steam' }
-        @{ Id = 'RiotGames.LeagueOfLegends.BR' }
-        @{ Id = 'EpicGames.EpicGamesLauncher' }
-        @{ Id = 'XPDM5VSMTKQLBJ' } # Battle.net
+        @{ Id = 'Valve.Steam'; Source = 'winget' }
+        @{ Id = 'RiotGames.LeagueOfLegends.BR'; Source = 'winget' }
+        @{ Id = 'EpicGames.EpicGamesLauncher'; Source = 'winget' }
+        @{ Id = 'Blizzard.BattleNet'; Source = 'winget'; Args = @('--location', 'C:\Program Files (x86)\Battle.net') }
     )
 
     ProgrammingLanguages = @(
-        @{ Id = 'Rustlang.Rustup' }
-        @{ Id = 'LLVM.LLVM' }
-        @{ Id = 'Oracle.JDK.25' }
-        @{ Id = 'GoLang.Go' }
+        @{ Id = 'Rustlang.Rustup'; Source = 'winget' }
+        @{ Id = 'LLVM.LLVM'; Source = 'winget' }
+        @{ Id = 'Oracle.JDK.25'; Source = 'winget' }
+        @{ Id = 'GoLang.Go'; Source = 'winget' }
     )
 
     DevelopmentTools = @(
-        @{ Id = 'Microsoft.WindowsTerminal' }
-        @{ Id = 'Microsoft.VisualStudioCode' }
-        @{ Id = 'Microsoft.VisualStudio.BuildTools' }
-        @{ Id = 'JetBrains.Toolbox' }
-        @{ Id = 'Git.Git' }
+        @{ Id = 'Microsoft.WindowsTerminal'; Source = 'winget' }
+        @{ Id = 'Microsoft.VisualStudioCode'; Source = 'winget' }
+        @{ Id = 'Microsoft.VisualStudio.BuildTools'; Source = 'winget' }
+        @{ Id = 'Microsoft.WindowsSDK.10.0.28000'; Source = 'winget' }
+        @{ Id = 'JetBrains.Toolbox'; Source = 'winget' }
+        @{ Id = 'Git.Git'; Source = 'winget' }
     )
 }
