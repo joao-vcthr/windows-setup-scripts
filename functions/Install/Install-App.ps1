@@ -6,7 +6,7 @@ function Install-App {
     $options = @(
         "install"
         "--id", $App.Id
-        "source", $App.Source
+        "--source", $App.Source
         "--exact"
         "--accept-package-agreements"
         "--accept-source-agreements"
