@@ -91,9 +91,9 @@
         @{ Id = 'Microsoft.WindowsTerminal'; Source = 'winget' }
         @{ Id = 'Microsoft.VisualStudioCode'; Source = 'winget' }
         @{ Id = 'Microsoft.VisualStudio.BuildTools'; Source = 'winget' }
-        @{ Id = 'Microsoft.WindowsSDK.10.0.28000'; Source = 'winget' }
+        @{ Id = 'Kitware.CMake'; Source = 'winget' }
+        @{ Id = 'Git.Git'; Source = 'winget' }
         @{ Id = 'Notepad++.Notepad++'; Source = 'winget' }
         @{ Id = 'JetBrains.Toolbox'; Source = 'winget' }
-        @{ Id = 'Git.Git'; Source = 'winget' }
     )
 }
