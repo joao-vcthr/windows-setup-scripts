@@ -76,7 +76,6 @@
         @{ Id = 'Valve.Steam'; Source = 'winget' }
         @{ Id = 'RiotGames.LeagueOfLegends.BR'; Source = 'winget' }
         @{ Id = 'EpicGames.EpicGamesLauncher'; Source = 'winget' }
-        @{ Id = 'Blizzard.BattleNet'; Source = 'winget'; Args = @('--location', 'C:\Program Files (x86)\Battle.net') }
     )
 
     ProgrammingLanguages = @(
