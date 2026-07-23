@@ -23,7 +23,6 @@
     Productivity = @(
         @{ Id = 'Obsidian.Obsidian'; Source = 'winget' }
         @{ Id = 'Doist.Todoist'; Source = 'winget' }
-        @{ Id = 'flxzt.rnote'; Source = 'winget' }
         @{ Id = 'Mozilla.Thunderbird.MSIX'; Source = 'winget' }
     )
 
