@@ -76,6 +76,7 @@
         @{ Id = 'Valve.Steam'; Source = 'winget' }
         @{ Id = 'RiotGames.LeagueOfLegends.BR'; Source = 'winget' }
         @{ Id = 'EpicGames.EpicGamesLauncher'; Source = 'winget' }
+        @{ Id = 'ElectronicArts.EADesktop'; Source = 'winget' }
     )
 
     ProgrammingLanguages = @(
